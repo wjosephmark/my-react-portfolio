@@ -1,5 +1,7 @@
 import React, { Component } from "react"
+import PortfolioItem from "./portfolio-item"
 import moment from "moment"
+
 
 
 export default class PortfolioContainer extends Component {
@@ -13,7 +15,7 @@ export default class PortfolioContainer extends Component {
         const data = ["Quip", "Eventbrite", "Ministry Safe"]
 
         return data.map(item => {
-            return <h1>{item}</h1>
+            return <PortfolioItem title ={item} url={"google.com"} />
         })
     }
 
