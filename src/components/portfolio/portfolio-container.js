@@ -5,8 +5,16 @@ import moment from "moment"
 export default class PortfolioContainer extends Component {
     constructor() {
         super()
-        
+
         console.log("Portfolio container has rendered")
+    }
+
+    portfolioItems(){
+        const data = ["Quip", "Eventbrite", "Ministry Safe"]
+
+        return data.map(item => {
+            return <h1>{item}</h1>
+        })
     }
 
     render(){
@@ -14,7 +22,7 @@ export default class PortfolioContainer extends Component {
             <div>
                 <h2>Portfolio items go here, update...</h2>
 
-                <portfolio-item />
+                {this.portfolioItems()}
             </div>
         )
     }
