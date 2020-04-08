@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from "react-router-dom"
 import moment from "moment";
 
 import PortfolioContainer from "./portfolio/portfolio-container"
@@ -6,6 +7,7 @@ import NavigtationContainer from "./navigation/navigation-container"
 import Home from "./pages/home"
 import About from "./pages/about"
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 
 export default class App extends Component {
   render() {
