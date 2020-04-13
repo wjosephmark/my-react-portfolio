@@ -15,7 +15,10 @@ export default class App extends Component {
   render() {
     
     return (
-      <div className='app'>
+      <div className='container'>
+
+        <h1>Joseph Mark Portfolio</h1>
+
         <Router>
           <div>
             <NavigtationContainer />
@@ -31,8 +34,6 @@ export default class App extends Component {
             </Switch>
           </div>
         </Router>
-
-        <h1>Joseph Mark Portfolio</h1>
 
       </div>
     );
