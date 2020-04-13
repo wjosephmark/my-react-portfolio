@@ -16,6 +16,9 @@
     a{
         color: black;
         text-decoration: none;
+        &:hover{
+            color: black;
+        }
     }
     &:hover{
         border-bottom: 1px solid black;
