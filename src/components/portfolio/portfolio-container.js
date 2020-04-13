@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import PortfolioItem from "./portfolio-item"
-import moment from "moment"
-
+import axios from "axios"
 
 
 export default class PortfolioContainer extends Component {
@@ -11,17 +10,16 @@ export default class PortfolioContainer extends Component {
         this.state = {
             pageTitle: "Welcome to my portfolio",
             isLoading: false,
-            data: [
-                {title: "Quip", category: "eCommerce"},
-                {title: "Eventbrite", category: "Scheduling"},
-                {title: "Ministry Safe", category: "Enterprise"},
-                {title: "SwingAway", category: "eCommerce"}
-            ]
+            data: []
         }
-
-        this.handleFilter = this.handleFilter.bind(this)
+        
+        this.handleFilter = this.handleFilter.bind(this)    
     }
-    
+
+        
+
+
+
     handleFilter(filter) {
         this.setState({
             data: this.state.data.filter( item => {
@@ -29,17 +27,39 @@ export default class PortfolioContainer extends Component {
             })
         })
     }
-
-    portfolioItems(){
-        return this.state.data.map(item => {
-            return <PortfolioItem title ={item.title} url={"google.com"} />
-        })
+    getPortfolioItems() {
+        axios
+            .get("https://josephm.devcamp.space/portfolio/portfolio_items")
+            .then(response => {
+            console.log("response data", response)
+            this.setState({
+                data: response.data.portfolio_items
+            })
+            })
+            .catch(error => {
+            console.log(error)
+            })
     }
+
+    portfolioItems() {
+        return this.state.data.map(item => {
+          return (
+            <PortfolioItem
+                item={item}
+                key={item.id}
+            />
+          );
+        });
+      }
     
+    componentDidMount(){
+        this.getPortfolioItems()
+    }
     render(){
         if (this.state.isLoading) {
             return <div>Loading...</div>
         }
+
         return (
             <div>
                 <h2>{this.state.pageTitle}</h2>
