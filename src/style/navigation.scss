@@ -4,6 +4,18 @@
     padding: 30px
 }
 
+.right-side{
+    a{
+        margin-left: 15px;
+        cursor: pointer;
+        color: $teal;
+        transition: .1s ease-in-out;
+        &:hover{
+            color: $dark-teal;
+        }
+    }
+}
+
 .left-side{
     display:flex;
 }
