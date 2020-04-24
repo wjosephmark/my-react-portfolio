@@ -18,10 +18,10 @@ import {
   faTrash,
   faSignOutAlt,
   faEdit,
-  faSpinner
+  faAtom
 } from "@fortawesome/free-solid-svg-icons"
 
-library.add(faTrash, faSignOutAlt, faEdit, faSpinner)
+library.add(faTrash, faSignOutAlt, faEdit, faAtom)
 
 export default class App extends Component {
   constructor(props) {
