@@ -22,7 +22,16 @@ class Blog extends Component {
         window.addEventListener("scroll", this.onScroll, false)
         this.handleNewBlogClick = this.handleNewBlogClick.bind(this)
         this.handleModalClose = this.handleModalClose.bind(this)
+        this.handleSuccessfulNewBlogSubmission = this.handleSuccessfulNewBlogSubmission.bind(this)
     }
+
+    handleSuccessfulNewBlogSubmission(blog) {
+        this.setState({
+            blogModalIsOpen: false,
+            blogItems: [blog].concat(this.state.blogItems)
+        })
+    }
+
 
     handleModalClose() {
         this.setState({
@@ -82,6 +91,7 @@ class Blog extends Component {
                 <BlogModal 
                 modalIsOpen={this.state.blogModalIsOpen}
                 handleModalClose={this.handleModalClose}
+                handleSuccessfulNewBlogSubmission={this.handleSuccessfulNewBlogSubmission}
                 />
 
                 <div className="new-blog-link">
