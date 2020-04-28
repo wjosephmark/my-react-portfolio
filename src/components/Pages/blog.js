@@ -88,31 +88,33 @@ class Blog extends Component {
         })
         return (
             <div className="blog-container">
-                <BlogModal 
-                modalIsOpen={this.state.blogModalIsOpen}
+              <BlogModal
+                handleSuccessfulNewBlogSubmission={
+                  this.handleSuccessfulNewBlogSubmission
+                }
                 handleModalClose={this.handleModalClose}
-                handleSuccessfulNewBlogSubmission={this.handleSuccessfulNewBlogSubmission}
-                />
-                {this.props.loggedInStatus === "LOGGED_IN" ? (
-                    <div className="new-blog-link">
-                        <a onClick={this.handleNewBlogClick}>
-                            <FontAwesomeIcon icon="plus-circle"/>
-                        </a>
-                    </div>
-                ) : null}
-
-                <div className="content-container">
-                    {blogRecords}
+                modalIsOpen={this.state.blogModalIsOpen}
+              />
+      
+              {this.props.loggedInStatus === "LOGGED_IN" ? (
+                <div className="new-blog-link">
+                  <a onClick={this.handleNewBlogClick}>
+                    <FontAwesomeIcon icon="plus-circle" />
+                  </a>
                 </div>
-                {this.state.isLoading ? (
+              ) : null}
+      
+              <div className="content-container">{blogRecords}</div>
+      
+              {this.state.isLoading ? (
                 <div className="content-loader">
-                    <FontAwesomeIcon icon="atom" spin/>
+                  <FontAwesomeIcon icon="atom" spin />
                 </div>
-                ) : null }
+              ) : null}
             </div>
-        )
-    }
-
-}
+          );
+        }
+      }
+      
 
 export default Blog
