@@ -9,11 +9,12 @@ import {
     faPlusCircle,
     faPhone,
     faEnvelope,
-    faMapMarkedAlt
+    faMapMarkedAlt,
+    faLock
   } from "@fortawesome/free-solid-svg-icons"
 
   const Icons= () => {
-    library.add(faTrash, faSignOutAlt, faEdit, faAtom, faPhone, faEnvelope, faMapMarkedAlt)
+    library.add(faTrash, faSignOutAlt, faEdit, faAtom, faPhone, faEnvelope, faMapMarkedAlt, faLock)
   }
 
   export default Icons
