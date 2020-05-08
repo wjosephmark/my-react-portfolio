@@ -94,6 +94,7 @@ export default class App extends Component {
             />
 
             <Switch>
+              
               <Route exact path="/" component={Home} />
 
               <Route
